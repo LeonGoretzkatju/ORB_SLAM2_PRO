@@ -15,6 +15,15 @@ cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j
 
+cd ../../open3d_ours
+
+echo "Configuring and building Thirdparty/open3d_ours"
+
+mkdir build
+cd build
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j
+
 cd ../../../
 
 echo "Uncompress vocabulary ..."

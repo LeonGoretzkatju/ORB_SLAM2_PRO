@@ -159,6 +159,9 @@ public:
     // Number of KeyPoints
     const int N;
 
+    cv::Mat mRGB;
+    cv::Mat mDepth;
+
     // KeyPoints, stereo coordinate and descriptors (all associated by an index)
     const std::vector<cv::KeyPoint> mvKeys;
     const std::vector<cv::KeyPoint> mvKeysUn;

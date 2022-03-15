@@ -116,10 +116,16 @@ Frame::Frame(const cv::Mat &imLeft, const cv::Mat &imRight, const double &timeSt
     AssignFeaturesToGrid();
 }
 
-Frame::Frame(const cv::Mat &imGray, const cv::Mat &imDepth, const double &timeStamp, ORBextractor* extractor,ORBVocabulary* voc, cv::Mat &K, cv::Mat &distCoef, const float &bf, const float &thDepth)
+Frame::Frame(const cv::Mat &imRGB, const cv::Mat &imGray, const cv::Mat &imDepth, const float &mDepthMapFactor, const double &timeStamp, ORBextractor* extractor,ORBVocabulary* voc, cv::Mat &K, cv::Mat &distCoef, const float &bf, const float &thDepth)
     :mpORBvocabulary(voc),mpORBextractorLeft(extractor),mpORBextractorRight(static_cast<ORBextractor*>(NULL)),
      mTimeStamp(timeStamp), mK(K.clone()),mDistCoef(distCoef.clone()), mbf(bf), mThDepth(thDepth)
 {
+    mRGB = imRGB;
+    mDepth = imDepth;
+
+    cv::Mat imDepthScaled;
+
+    imDepth.convertTo(imDepthScaled,CV_32F,mDepthMapFactor);
     // Frame ID
     mnId=nNextId++;
 
@@ -142,7 +148,7 @@ Frame::Frame(const cv::Mat &imGray, const cv::Mat &imDepth, const double &timeSt
 
     UndistortKeyPoints();
 
-    ComputeStereoFromRGBD(imDepth);
+    ComputeStereoFromRGBD(imDepthScaled);
 
     mvpMapPoints = vector<MapPoint*>(N,static_cast<MapPoint*>(NULL));
     mvbOutlier = vector<bool>(N,false);

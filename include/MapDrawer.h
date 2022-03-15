@@ -24,6 +24,7 @@
 #include"Map.h"
 #include"MapPoint.h"
 #include"KeyFrame.h"
+#include "open3d/geometry/PointCloud.h"
 #include<pangolin/pangolin.h>
 
 #include<mutex>
@@ -39,11 +40,16 @@ public:
     Map* mpMap;
 
     void DrawMapPoints();
+    void DrawMesh();
     void DrawKeyFrames(const bool bDrawKF, const bool bDrawGraph);
     void DrawCurrentCamera(pangolin::OpenGlMatrix &Twc);
     void SetCurrentCameraPose(const cv::Mat &Tcw);
     void SetReferenceKeyFrame(KeyFrame *pKF);
     void GetCurrentOpenGLCameraMatrix(pangolin::OpenGlMatrix &M);
+
+protected:
+    std::shared_ptr<open3d::geometry::PointCloud> globalMap;
+    uint16_t                lastKeyframeSize =0;
 
 private:
 

@@ -22,6 +22,14 @@
 #include "MapPoint.h"
 #include "KeyFrame.h"
 #include <pangolin/pangolin.h>
+
+#include "open3d/pipelines/integration/ScalableTSDFVolume.h"
+#include "open3d/pipelines/integration/TSDFVolume.h"
+
+#include "open3d/geometry/Image.h"
+#include "open3d/geometry/RGBDImage.h"
+#include "open3d/camera/PinholeCameraIntrinsic.h"
+
 #include <mutex>
 
 namespace ORB_SLAM2
@@ -38,6 +46,8 @@ MapDrawer::MapDrawer(Map* pMap, const string &strSettingPath):mpMap(pMap)
     mPointSize = fSettings["Viewer.PointSize"];
     mCameraSize = fSettings["Viewer.CameraSize"];
     mCameraLineWidth = fSettings["Viewer.CameraLineWidth"];
+
+    globalMap = std::make_shared<open3d::geometry::PointCloud>();
 
 }
 
@@ -78,6 +88,70 @@ void MapDrawer::DrawMapPoints()
     }
 
     glEnd();
+}
+
+int num_j = 0;
+
+void MapDrawer::DrawMesh()
+{
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+    glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
+    glBegin(GL_POINTS);
+
+    const vector<KeyFrame*> vpKFs = mpMap->GetAllKeyFrames();
+    if (!vpKFs.empty())
+    {
+        double length = 4.0;
+        int resolution = 216.0;
+        double sdf_trunc_percentage = 0.01;
+        open3d::pipelines::integration::ScalableTSDFVolume volume(
+                length / (double)resolution, length * sdf_trunc_percentage,
+                open3d::pipelines::integration::TSDFVolumeColorType::RGB8);
+        size_t N = vpKFs.size();
+        for(size_t i=lastKeyframeSize; i<N ; i++)
+        {
+            if(vpKFs[i]->isBad())
+                continue;
+
+            open3d::geometry::Image depth, color;
+
+            color.FromCVMatRGB(vpKFs[i]->mRGB);
+            depth.FromCVMatRGB(vpKFs[i]->mDepth);
+
+
+            float fx, fy, cx, cy, invfx, invfy, mbf, mb, mThDepth;
+            fx = vpKFs[i]->fx; fy = vpKFs[i]->fy;
+            cx = vpKFs[i]->cx; cy = vpKFs[i]->cy;
+
+            auto rgbd = open3d::geometry::RGBDImage::CreateFromColorAndDepth(
+                    color, depth, 5000.0, 7.0, false);
+            open3d::camera::PinholeCameraIntrinsic intrinsic_
+                    (depth.width_, depth.height_, fx, fy, cx, cy );
+            cv::Mat extrinsic = vpKFs[i]->GetPose();// Inverse();
+
+            Eigen::Matrix4d poseMat;
+            poseMat << extrinsic.at<float>(0,0), extrinsic.at<float>(0,1), extrinsic.at<float>(0,2), extrinsic.at<float>(0,3),
+                       extrinsic.at<float>(1,0), extrinsic.at<float>(1,1), extrinsic.at<float>(1,2), extrinsic.at<float>(1,3),
+                       extrinsic.at<float>(2,0), extrinsic.at<float>(2,1), extrinsic.at<float>(2,2), extrinsic.at<float>(2,3),
+                       extrinsic.at<float>(3,0), extrinsic.at<float>(3,1), extrinsic.at<float>(3,2), extrinsic.at<float>(3,3);
+            volume.Integrate(*rgbd, intrinsic_,   poseMat);
+        }
+
+        auto pcd = volume.ExtractPointCloud();
+        if (num_j == 0)
+            globalMap = pcd;
+        else
+            *globalMap += *pcd;
+        num_j++;
+        lastKeyframeSize = N;
+        for (int i = 0; i < globalMap->points_.size(); ++i) {
+            Eigen::Vector3d color = globalMap->colors_[i];
+            glColor3f(color[0], color[1], color[2]);
+            Eigen::Vector3d point = globalMap->points_[i];
+            glVertex3f(point[0], point[1], point[2]);
+        }
+        glEnd();
+    }
 }
 
 void MapDrawer::DrawKeyFrames(const bool bDrawKF, const bool bDrawGraph)

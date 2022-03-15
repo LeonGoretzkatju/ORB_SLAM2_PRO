@@ -33,6 +33,8 @@
 #include"Optimizer.h"
 #include"PnPsolver.h"
 
+#include <unistd.h>
+
 #include<iostream>
 
 #include<mutex>
@@ -206,6 +208,9 @@ cv::Mat Tracking::GrabImageStereo(const cv::Mat &imRectLeft, const cv::Mat &imRe
 
 cv::Mat Tracking::GrabImageRGBD(const cv::Mat &imRGB,const cv::Mat &imD, const double &timestamp)
 {
+
+    cv::Mat mImRGB;
+    imRGB.copyTo(mImRGB);
     mImGray = imRGB;
     cv::Mat imDepth = imD;
 
@@ -224,10 +229,10 @@ cv::Mat Tracking::GrabImageRGBD(const cv::Mat &imRGB,const cv::Mat &imD, const d
             cvtColor(mImGray,mImGray,CV_BGRA2GRAY);
     }
 
-    if((fabs(mDepthMapFactor-1.0f)>1e-5) || imDepth.type()!=CV_32F)
-        imDepth.convertTo(imDepth,CV_32F,mDepthMapFactor);
+    // if((fabs(mDepthMapFactor-1.0f)>1e-5) || imDepth.type()!=CV_32F)
+    //     imDepth.convertTo(imDepth,CV_32F,mDepthMapFactor);
 
-    mCurrentFrame = Frame(mImGray,imDepth,timestamp,mpORBextractorLeft,mpORBVocabulary,mK,mDistCoef,mbf,mThDepth);
+    mCurrentFrame = Frame(mImRGB,mImGray,imDepth,mDepthMapFactor,timestamp,mpORBextractorLeft,mpORBVocabulary,mK,mDistCoef,mbf,mThDepth);
 
     Track();
 
