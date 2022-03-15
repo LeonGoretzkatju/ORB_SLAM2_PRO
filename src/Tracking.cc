@@ -33,6 +33,12 @@
 #include"Optimizer.h"
 #include"PnPsolver.h"
 
+#include "open3d/geometry/Image.h"
+#include "open3d/geometry/RGBDImage.h"
+#include "open3d/camera/PinholeCameraIntrinsic.h"
+#include "open3d/pipelines/odometry/Odometry.h"
+#include "open3d/pipelines/odometry/RGBDOdometryJacobian.h"
+
 #include <unistd.h>
 
 #include<iostream>
@@ -41,6 +47,8 @@
 
 
 using namespace std;
+
+using namespace open3d;
 
 namespace ORB_SLAM2
 {
@@ -775,7 +783,15 @@ bool Tracking::TrackReferenceKeyFrame()
         return false;
 
     mCurrentFrame.mvpMapPoints = vpMapPointMatches;
-    mCurrentFrame.SetPose(mLastFrame.mTcw);
+
+    Eigen::Matrix4d trans_odo = ICPFrameToFrameTracking(mCurrentFrame, mLastFrame);
+
+    cv::Mat ICPVelocity = (cv::Mat_<float>(4, 4) << trans_odo(0,0), trans_odo(0,1), trans_odo(0,2), trans_odo(0,3),
+    trans_odo(1,0), trans_odo(1,1), trans_odo(1,2), trans_odo(1,3),
+    trans_odo(2,0), trans_odo(2,1), trans_odo(2,2), trans_odo(2,3),
+    trans_odo(3,0), trans_odo(3,1), trans_odo(3,2), trans_odo(3,3));
+
+    mCurrentFrame.SetPose(ICPVelocity * mLastFrame.mTcw);
 
     Optimizer::PoseOptimization(&mCurrentFrame);
 
@@ -869,6 +885,42 @@ void Tracking::UpdateLastFrame()
     }
 }
 
+Eigen::Matrix4d Tracking::ICPFrameToFrameTracking(Frame &CurrentFrame, Frame &LastFrame)
+{
+    camera::PinholeCameraIntrinsic intrinsic(CurrentFrame.mRGB.size().width, CurrentFrame.mRGB.size().height,
+                                             CurrentFrame.fx,CurrentFrame.fy,CurrentFrame.cx
+            ,CurrentFrame.cy);
+    geometry::Image color_source1, color_target1, depth_source1, depth_target1;
+//    cv::resize(LastFrame.mRGB,LastFrame.mRGB,cv::Size(320,240));
+//    cv::resize(LastFrame.mDepth,LastFrame.mDepth,cv::Size(320,240));
+//    cv::resize(CurrentFrame.mRGB,CurrentFrame.mRGB,cv::Size(320,240));
+//    cv::resize(CurrentFrame.mDepth,CurrentFrame.mDepth,cv::Size(320,240));
+    color_source1.FromCVMatRGB(LastFrame.mRGB);
+    depth_source1.FromCVMatRGB(LastFrame.mDepth);
+    color_target1.FromCVMatRGB(CurrentFrame.mRGB);
+    depth_target1.FromCVMatRGB(CurrentFrame.mDepth);
+
+    std::shared_ptr<geometry::RGBDImage> (*CreateRGBDImage)(
+            const geometry::Image&, const geometry::Image&, bool);
+    CreateRGBDImage = &geometry::RGBDImage::CreateFromTUMFormat;
+
+    auto source = CreateRGBDImage(color_source1,depth_source1, true);
+    auto target = CreateRGBDImage(color_target1,depth_target1, true);
+    pipelines::odometry::OdometryOption option;
+    Eigen::Matrix4d odo_init = Eigen::Matrix4d::Identity();
+    Eigen::Matrix4d trans_odo = Eigen::Matrix4d::Identity();
+    Eigen::Matrix6d info_odo = Eigen::Matrix6d::Zero();
+    bool is_success;
+    pipelines::odometry::RGBDOdometryJacobianFromHybridTerm jacobian_method;
+    std::tie(is_success, trans_odo, info_odo) =
+            pipelines::odometry::ComputeRGBDOdometry(*source, *target, intrinsic,
+                                                     odo_init, jacobian_method,
+                                                     option, CurrentFrame.fx,
+                                                     CurrentFrame.fy, CurrentFrame.cx
+                    , CurrentFrame.cy);
+    return trans_odo;
+}
+
 bool Tracking::TrackWithMotionModel()
 {
     ORBmatcher matcher(0.9,true);
@@ -877,7 +929,16 @@ bool Tracking::TrackWithMotionModel()
     // Create "visual odometry" points if in Localization Mode
     UpdateLastFrame();
 
-    mCurrentFrame.SetPose(mVelocity*mLastFrame.mTcw);
+    Eigen::Matrix4d trans_odo = ICPFrameToFrameTracking(mCurrentFrame, mLastFrame);
+
+    cv::Mat Velocity = (cv::Mat_<float>(4, 4) << trans_odo(0,0), trans_odo(0,1), trans_odo(0,2), trans_odo(0,3),
+    trans_odo(1,0), trans_odo(1,1), trans_odo(1,2), trans_odo(1,3),
+    trans_odo(2,0), trans_odo(2,1), trans_odo(2,2), trans_odo(2,3),
+    trans_odo(3,0), trans_odo(3,1), trans_odo(3,2), trans_odo(3,3));
+
+    mCurrentFrame.SetPose(Velocity * mLastFrame.mTcw);
+
+    // mCurrentFrame.SetPose(mVelocity*mLastFrame.mTcw);
 
     fill(mCurrentFrame.mvpMapPoints.begin(),mCurrentFrame.mvpMapPoints.end(),static_cast<MapPoint*>(NULL));
 
