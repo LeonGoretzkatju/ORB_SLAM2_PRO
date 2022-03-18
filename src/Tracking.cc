@@ -240,6 +240,8 @@ cv::Mat Tracking::GrabImageRGBD(const cv::Mat &imRGB,const cv::Mat &imD, const d
     // if((fabs(mDepthMapFactor-1.0f)>1e-5) || imDepth.type()!=CV_32F)
     //     imDepth.convertTo(imDepth,CV_32F,mDepthMapFactor);
 
+//    std::cout << "mDepthFactor   =    " << mDepthMapFactor << std::endl;
+
     mCurrentFrame = Frame(mImRGB,mImGray,imDepth,mDepthMapFactor,timestamp,mpORBextractorLeft,mpORBVocabulary,mK,mDistCoef,mbf,mThDepth);
 
     Track();
@@ -440,9 +442,18 @@ void Tracking::Track()
                 mLastFrame.GetRotationInverse().copyTo(LastTwc.rowRange(0,3).colRange(0,3));
                 mLastFrame.GetCameraCenter().copyTo(LastTwc.rowRange(0,3).col(3));
                 mVelocity = mCurrentFrame.mTcw*LastTwc;
+
             }
             else
-                mVelocity = cv::Mat();
+            {
+                Eigen::Matrix4d trans_odo = ICPFrameToFrameTracking(mCurrentFrame, mLastFrame);
+
+                mVelocity = (cv::Mat_<float>(4, 4) << trans_odo(0,0), trans_odo(0,1), trans_odo(0,2), trans_odo(0,3),
+                        trans_odo(1,0), trans_odo(1,1), trans_odo(1,2), trans_odo(1,3),
+                        trans_odo(2,0), trans_odo(2,1), trans_odo(2,2), trans_odo(2,3),
+                        trans_odo(3,0), trans_odo(3,1), trans_odo(3,2), trans_odo(3,3));
+                //                mVelocity = cv::Mat();
+            }
 
             mpMapDrawer->SetCurrentCameraPose(mCurrentFrame.mTcw);
 
@@ -786,12 +797,12 @@ bool Tracking::TrackReferenceKeyFrame()
 
     Eigen::Matrix4d trans_odo = ICPFrameToFrameTracking(mCurrentFrame, mLastFrame);
 
-    cv::Mat ICPVelocity = (cv::Mat_<float>(4, 4) << trans_odo(0,0), trans_odo(0,1), trans_odo(0,2), trans_odo(0,3),
+    mVelocity = (cv::Mat_<float>(4, 4) << trans_odo(0,0), trans_odo(0,1), trans_odo(0,2), trans_odo(0,3),
     trans_odo(1,0), trans_odo(1,1), trans_odo(1,2), trans_odo(1,3),
     trans_odo(2,0), trans_odo(2,1), trans_odo(2,2), trans_odo(2,3),
     trans_odo(3,0), trans_odo(3,1), trans_odo(3,2), trans_odo(3,3));
 
-    mCurrentFrame.SetPose(ICPVelocity * mLastFrame.mTcw);
+    mCurrentFrame.SetPose(mVelocity * mLastFrame.mTcw);
 
     Optimizer::PoseOptimization(&mCurrentFrame);
 

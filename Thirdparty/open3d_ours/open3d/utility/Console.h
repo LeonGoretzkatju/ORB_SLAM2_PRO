@@ -94,21 +94,21 @@ public:
                               const char *format,
                               fmt::format_args args) const {
         std::string err_msg = fmt::vformat(format, args);
-        // err_msg = fmt::format(
-        //         "In function {}:\n"
-        //         "{}:{} [Open3D Error] {}",
-        //         fn_name, fname, linenum, err_msg);
-        // err_msg = ColorString(err_msg, TextColor::Red, 1);
+        err_msg = fmt::format(
+                "In function {}:\n"
+                "{}:{} [Open3D Error] {}",
+                fn_name, fname, linenum, err_msg);
+        err_msg = ColorString(err_msg, TextColor::Red, 1);
         throw std::runtime_error(err_msg);
     }
 
     void VWarning(const char *format, fmt::format_args args) const {
-        // if (verbosity_level_ >= VerbosityLevel::Warning) {
-        //     std::string err_msg = fmt::vformat(format, args);
-        //     err_msg = fmt::format("[Open3D WARNING] {}", err_msg);
-        //     err_msg = ColorString(err_msg, TextColor::Yellow, 1);
-        //     print_fcn_(err_msg);
-        // }
+        if (verbosity_level_ >= VerbosityLevel::Warning) {
+            std::string err_msg = fmt::vformat(format, args);
+            err_msg = fmt::format("[Open3D WARNING] {}", err_msg);
+            err_msg = ColorString(err_msg, TextColor::Yellow, 1);
+            print_fcn_(err_msg);
+        }
     }
 
     void VInfo(const char *format, fmt::format_args args) const {

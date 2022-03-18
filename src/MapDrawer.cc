@@ -102,7 +102,7 @@ void MapDrawer::DrawMesh()
     if (!vpKFs.empty())
     {
         double length = 4.0;
-        int resolution = 216.0;
+        int resolution = 316.0;
         double sdf_trunc_percentage = 0.01;
         open3d::pipelines::integration::ScalableTSDFVolume volume(
                 length / (double)resolution, length * sdf_trunc_percentage,

@@ -24,16 +24,16 @@
 // IN THE SOFTWARE.
 // ----------------------------------------------------------------------------
 
-#include "open3d/pipelines/odometry/Odometry.h"
+#include "Odometry.h"
 #include <chrono>
 #include <Eigen/Dense>
 #include <memory>
 
-#include "open3d/geometry/Image.h"
-#include "open3d/geometry/RGBDImage.h"
-#include "open3d/pipelines/odometry/RGBDOdometryJacobian.h"
-#include "open3d/utility/Eigen.h"
-#include "open3d/utility/Timer.h"
+#include "../../geometry/Image.h"
+#include "../../geometry/RGBDImage.h"
+#include "RGBDOdometryJacobian.h"
+#include "../../utility/Eigen.h"
+// #include "open3d/utility/Timer.h"
 
 namespace open3d {
 namespace pipelines {

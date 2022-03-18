@@ -38,6 +38,7 @@ endif()
 
 find_package(Eigen3 3.1.0 REQUIRED)
 find_package(Pangolin REQUIRED)
+find_package(realsense2)
 
 include_directories(
 ${PROJECT_SOURCE_DIR}
@@ -80,6 +81,15 @@ ${PROJECT_SOURCE_DIR}/Thirdparty/g2o/lib/libg2o.so
 ${PROJECT_SOURCE_DIR}/Thirdparty/open3d_ours/build/open3d/libopen3d_part_lib.so
 )
 
+if(realsense2_FOUND)
+   include_directories(${PROJECT_NAME}
+           ${realsense_INCLUDE_DIR}
+           )
+   target_link_libraries(${PROJECT_NAME}
+           ${realsense2_LIBRARY}
+           )
+endif()
+
 # Build examples
 
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/RGB-D)
@@ -87,6 +97,15 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/RGB-D)
 add_executable(rgbd_tum
 Examples/RGB-D/rgbd_tum.cc)
 target_link_libraries(rgbd_tum ${PROJECT_NAME})
+
+if(realsense2_FOUND)
+   add_executable(rgbd_realsense_D435i
+           Examples/RGB-D/rgbd_realsense_D435i.cc)
+   target_link_libraries(rgbd_realsense_D435i ${PROJECT_NAME})
+   add_executable(rgbd_realsense_D455i
+           Examples/RGB-D/readSensor.cc)
+   target_link_libraries(rgbd_realsense_D455i ${PROJECT_NAME})
+endif()
 
 # set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/Examples/Stereo)
 

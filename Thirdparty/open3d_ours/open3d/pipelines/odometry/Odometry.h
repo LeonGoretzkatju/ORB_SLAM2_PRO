@@ -31,11 +31,11 @@
 #include <tuple>
 #include <vector>
 
-#include "open3d/camera/PinholeCameraIntrinsic.h"
-#include "open3d/pipelines/odometry/OdometryOption.h"
-#include "open3d/pipelines/odometry/RGBDOdometryJacobian.h"
-#include "open3d/utility/Console.h"
-#include "open3d/utility/Eigen.h"
+#include "../../camera/PinholeCameraIntrinsic.h"
+#include "OdometryOption.h"
+#include "RGBDOdometryJacobian.h"
+#include "../../utility/Console.h"
+#include "../../utility/Eigen.h"
 
 namespace open3d {
 

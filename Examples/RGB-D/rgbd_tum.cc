@@ -117,7 +117,7 @@ int main(int argc, char **argv)
             T = tframe-vTimestamps[ni-1];
 
         if(ttrack<T)
-            usleep((T-ttrack)*1e4);
+            usleep((T-ttrack)*1e6);
     }
 
     // Stop all threads
@@ -152,28 +152,28 @@ void LoadImages(const string &strAssociationFilename, vector<string> &vstrImageF
         getline(fAssociation,s);
         if(!s.empty())
         {
-            // stringstream ss;
-            // ss << s;
-            // double t;
-            // string sRGB, sD;
-            // ss >> t;
-            // vTimestamps.push_back(t);
-            // ss >> sRGB;
-            // vstrImageFilenamesRGB.push_back(sRGB);
-            // ss >> t;
-            // ss >> sD;
-            // vstrImageFilenamesD.push_back(sD);
             stringstream ss;
             ss << s;
             double t;
             string sRGB, sD;
             ss >> t;
             vTimestamps.push_back(t);
-            ss >> sD;
-            vstrImageFilenamesD.push_back(sD);
-            ss >> t;
             ss >> sRGB;
             vstrImageFilenamesRGB.push_back(sRGB);
+            ss >> t;
+            ss >> sD;
+            vstrImageFilenamesD.push_back(sD);
+            // stringstream ss;
+            // ss << s;
+            // double t;
+            // string sRGB, sD;
+            // ss >> t;
+            // vTimestamps.push_back(t);
+            // ss >> sD;
+            // vstrImageFilenamesD.push_back(sD);
+            // ss >> t;
+            // ss >> sRGB;
+            // vstrImageFilenamesRGB.push_back(sRGB);
 
         }
     }
