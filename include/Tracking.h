@@ -38,6 +38,8 @@
 #include "MapDrawer.h"
 #include "System.h"
 
+#include "DenseRecons.h"
+
 #include <mutex>
 
 namespace ORB_SLAM2
@@ -48,6 +50,7 @@ class FrameDrawer;
 class Map;
 class LocalMapping;
 class LoopClosing;
+class DenseRecons;
 class System;
 
 class Tracking
@@ -55,6 +58,7 @@ class Tracking
 
 public:
     Tracking(System* pSys, ORBVocabulary* pVoc, FrameDrawer* pFrameDrawer, MapDrawer* pMapDrawer, Map* pMap,
+             shared_ptr<DenseRecons> pDenseRecons,
              KeyFrameDatabase* pKFDB, const string &strSettingPath, const int sensor);
 
     // Preprocess the input and call Track(). Extract features and performs stereo matching.
@@ -216,6 +220,8 @@ protected:
     bool mbRGB;
 
     list<MapPoint*> mlpTemporalPoints;
+
+    shared_ptr<DenseRecons> mpDenseReconsMapping;
 };
 
 } //namespace ORB_SLAM

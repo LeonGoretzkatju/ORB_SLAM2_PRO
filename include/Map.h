@@ -23,23 +23,26 @@
 
 #include "MapPoint.h"
 #include "KeyFrame.h"
+#include "open3d/geometry/PointCloud.h"
 #include <set>
 
 #include <mutex>
 
-
+using namespace open3d;
 
 namespace ORB_SLAM2
 {
 
 class MapPoint;
 class KeyFrame;
+class DenseRecons;
 
 class Map
 {
 public:
     Map();
-
+    void insertPointCloud(std::shared_ptr<geometry::PointCloud> DensePointCloud);
+    std::shared_ptr<geometry::PointCloud> GetAllPointCloud();
     void AddKeyFrame(KeyFrame* pKF);
     void AddMapPoint(MapPoint* pMP);
     void EraseMapPoint(MapPoint* pMP);
@@ -71,6 +74,8 @@ protected:
     std::set<KeyFrame*> mspKeyFrames;
 
     std::vector<MapPoint*> mvpReferenceMapPoints;
+
+    std::shared_ptr<geometry::PointCloud> DenseCloud;
 
     long unsigned int mnMaxKFid;
 

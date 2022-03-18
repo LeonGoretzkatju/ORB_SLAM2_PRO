@@ -36,6 +36,7 @@
 #include "ORBVocabulary.h"
 #include "Viewer.h"
 
+#include "DenseRecons.h"
 namespace ORB_SLAM2
 {
 
@@ -45,6 +46,7 @@ class Map;
 class Tracking;
 class LocalMapping;
 class LoopClosing;
+class DenseRecons;
 
 class System
 {
@@ -159,6 +161,8 @@ private:
     std::thread* mptLocalMapping;
     std::thread* mptLoopClosing;
     std::thread* mptViewer;
+
+    shared_ptr<DenseRecons> mpDenseRecons;
 
     // Reset flag
     std::mutex mMutexReset;

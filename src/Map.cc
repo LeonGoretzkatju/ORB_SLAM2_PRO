@@ -29,6 +29,15 @@ Map::Map():mnMaxKFid(0),mnBigChangeIdx(0)
 {
 }
 
+void Map::insertPointCloud(std::shared_ptr<geometry::PointCloud> DensePointCloud) {
+    DenseCloud = DensePointCloud;
+}
+
+std::shared_ptr<geometry::PointCloud> Map::GetAllPointCloud() {
+    unique_lock<mutex> lock(mMutexMap);
+    return DenseCloud;
+}
+
 void Map::AddKeyFrame(KeyFrame *pKF)
 {
     unique_lock<mutex> lock(mMutexMap);

@@ -154,6 +154,28 @@ void MapDrawer::DrawMesh()
     }
 }
 
+void MapDrawer::ShowMesh() {
+    auto pointclouds = mpMap->GetAllPointCloud();
+    int num = pointclouds->points_.size();
+    auto copyCloud = pointclouds;
+//    if (!pointclouds->points_.empty())
+//    {
+        cout << "success" << endl;
+//    }
+    glPointSize(mPointSize);
+    glBegin(GL_POINTS);
+    for (int i = 0; i < num; ++i) {
+        Eigen::Vector3d color = copyCloud->colors_[i];
+        auto copycolor = color;
+//        glColor3f(copycolor[0], copycolor[1], copycolor[2]);
+        Eigen::Vector3d point = copyCloud->points_[i];
+        glVertex3f(point.x(), point.y(), point.z());
+    }
+    glEnd();
+
+
+}
+
 void MapDrawer::DrawKeyFrames(const bool bDrawKF, const bool bDrawGraph)
 {
     const float &w = mKeyFrameSize;
