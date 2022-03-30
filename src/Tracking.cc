@@ -455,7 +455,7 @@ void Tracking::Track()
                         trans_odo(1,0), trans_odo(1,1), trans_odo(1,2), trans_odo(1,3),
                         trans_odo(2,0), trans_odo(2,1), trans_odo(2,2), trans_odo(2,3),
                         trans_odo(3,0), trans_odo(3,1), trans_odo(3,2), trans_odo(3,3));
-                //                mVelocity = cv::Mat();
+//                                mVelocity = cv::Mat();
             }
 
             mpMapDrawer->SetCurrentCameraPose(mCurrentFrame.mTcw);
@@ -800,12 +800,12 @@ bool Tracking::TrackReferenceKeyFrame()
 
     Eigen::Matrix4d trans_odo = ICPFrameToFrameTracking(mCurrentFrame, mLastFrame);
 
-    mVelocity = (cv::Mat_<float>(4, 4) << trans_odo(0,0), trans_odo(0,1), trans_odo(0,2), trans_odo(0,3),
-    trans_odo(1,0), trans_odo(1,1), trans_odo(1,2), trans_odo(1,3),
-    trans_odo(2,0), trans_odo(2,1), trans_odo(2,2), trans_odo(2,3),
-    trans_odo(3,0), trans_odo(3,1), trans_odo(3,2), trans_odo(3,3));
+    cv::Mat rVelocity = (cv::Mat_<float>(4, 4) << trans_odo(0,0), trans_odo(0,1), trans_odo(0,2), trans_odo(0,3),
+            trans_odo(1,0), trans_odo(1,1), trans_odo(1,2), trans_odo(1,3),
+            trans_odo(2,0), trans_odo(2,1), trans_odo(2,2), trans_odo(2,3),
+            trans_odo(3,0), trans_odo(3,1), trans_odo(3,2), trans_odo(3,3));
 
-    mCurrentFrame.SetPose(mVelocity * mLastFrame.mTcw);
+    mCurrentFrame.SetPose(rVelocity * mLastFrame.mTcw);
 
     Optimizer::PoseOptimization(&mCurrentFrame);
 
@@ -901,28 +901,35 @@ void Tracking::UpdateLastFrame()
 
 Eigen::Matrix4d Tracking::ICPFrameToFrameTracking(Frame &CurrentFrame, Frame &LastFrame)
 {
-    camera::PinholeCameraIntrinsic intrinsic(CurrentFrame.mRGB.size().width, CurrentFrame.mRGB.size().height,
-                                             CurrentFrame.fx,CurrentFrame.fy,CurrentFrame.cx
-            ,CurrentFrame.cy);
+    camera::PinholeCameraIntrinsic intrinsic(CurrentFrame.mRGB.size().width/2, CurrentFrame.mRGB.size().height/2,
+                                             CurrentFrame.fx/2,CurrentFrame.fy/2,CurrentFrame.cx/2
+            ,CurrentFrame.cy/2);
     geometry::Image color_source1, color_target1, depth_source1, depth_target1;
-//    cv::resize(LastFrame.mRGB,LastFrame.mRGB,cv::Size(320,240));
+    cv::Mat SourceRGB, TargetRGB;
+    cv::resize(LastFrame.mRGB,SourceRGB,cv::Size(320,240));
 //    cv::resize(LastFrame.mDepth,LastFrame.mDepth,cv::Size(320,240));
-//    cv::resize(CurrentFrame.mRGB,CurrentFrame.mRGB,cv::Size(320,240));
+    cv::resize(CurrentFrame.mRGB,TargetRGB,cv::Size(320,240));
 //    cv::resize(CurrentFrame.mDepth,CurrentFrame.mDepth,cv::Size(320,240));
-    color_source1.FromCVMatRGB(LastFrame.mRGB);
-    depth_source1.FromCVMatRGB(LastFrame.mDepth);
-    color_target1.FromCVMatRGB(CurrentFrame.mRGB);
-    depth_target1.FromCVMatRGB(CurrentFrame.mDepth);
+    color_source1.FromCVMatRGB(SourceRGB);
+    depth_source1.FromCVMatRGB(LastFrame.seg_depth);
+    color_target1.FromCVMatRGB(TargetRGB);
+    depth_target1.FromCVMatRGB(CurrentFrame.seg_depth);
 
-    std::shared_ptr<geometry::RGBDImage> (*CreateRGBDImage)(
-            const geometry::Image&, const geometry::Image&, bool);
-    CreateRGBDImage = &geometry::RGBDImage::CreateFromTUMFormat;
+   std::shared_ptr<geometry::RGBDImage> (*CreateRGBDImage)(
+           const geometry::Image&, const geometry::Image&, bool);
+   CreateRGBDImage = &geometry::RGBDImage::CreateFromTUMFormat;
 
     auto source = CreateRGBDImage(color_source1,depth_source1, true);
     auto target = CreateRGBDImage(color_target1,depth_target1, true);
+
+//    auto source = open3d::geometry::RGBDImage::CreateFromColorAndDepth(
+//            color_source1, depth_source1, 10000.0, 4.0, true);
+//    auto target = open3d::geometry::RGBDImage::CreateFromColorAndDepth(
+//            color_target1, depth_target1, 10000.0, 4.0, true);
+
     pipelines::odometry::OdometryOption option;
     Eigen::Matrix4d odo_init = Eigen::Matrix4d::Identity();
-    Eigen::Matrix4d trans_odo = Eigen::Matrix4d::Identity();
+    Eigen::Matrix4d trans_odo;
     Eigen::Matrix6d info_odo = Eigen::Matrix6d::Zero();
     bool is_success;
     pipelines::odometry::RGBDOdometryJacobianFromHybridTerm jacobian_method;

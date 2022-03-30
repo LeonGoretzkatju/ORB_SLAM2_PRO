@@ -4,7 +4,9 @@ add_definitions(-w)
 IF(NOT CMAKE_BUILD_TYPE)
   SET(CMAKE_BUILD_TYPE Release)
 ENDIF()
-
+SET(CMAKE_CXX_STANDARD 14)
+#set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
 MESSAGE("Build type: " ${CMAKE_BUILD_TYPE})
 
 set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}  -Wall  -O3 -march=native ")
@@ -48,6 +50,8 @@ ${Pangolin_INCLUDE_DIRS}
 ${PROJECT_SOURCE_DIR}/Thirdparty/open3d_ours
 )
 
+include_directories(include/peac)
+
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 
 add_library(${PROJECT_NAME} SHARED
@@ -70,7 +74,7 @@ src/KeyFrameDatabase.cc
 src/Sim3Solver.cc
 src/Initializer.cc
 src/Viewer.cc
-        include/DenseRecons.h src/DenseRecons.cc)
+        include/DenseRecons.h src/DenseRecons.cc include/PlaneExtractor.h src/PlaneExtractor.cc include/3DLineExtractor.h src/3DLineExtractor.cc)
 
 target_link_libraries(${PROJECT_NAME}
 ${OpenCV_LIBS}

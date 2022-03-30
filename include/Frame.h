@@ -22,7 +22,7 @@
 #define FRAME_H
 
 #include<vector>
-
+#include "PlaneExtractor.h"
 #include "MapPoint.h"
 #include "Thirdparty/DBoW2/DBoW2/BowVector.h"
 #include "Thirdparty/DBoW2/DBoW2/FeatureVector.h"
@@ -59,6 +59,9 @@ public:
 
     // Extract ORB on the image. 0 for left image and 1 for right image.
     void ExtractORB(int flag, const cv::Mat &im);
+
+    // Extract Plane on the image
+    void ExtractPlanes(const cv::Mat &imRGB, const cv::Mat &imDepth, const cv::Mat &K, const float &depthMapFactor);
 
     // Compute Bag of Words representation.
     void ComputeBoW();
@@ -131,6 +134,9 @@ public:
     // Number of KeyPoints.
     int N;
 
+    cv::Mat seg_depth;
+    cv::Mat seg_img;
+
     cv::Mat mRGB;
     cv::Mat mDepth;
 
@@ -189,6 +195,8 @@ public:
     static float mnMaxY;
 
     static bool mbInitialComputations;
+
+    PlaneDetection planeDetector;
 
 
 private:

@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Examples/RGB-D/rgbd_tum"
+			"path" : "/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Examples/RGB-D/rgbd_realsense_D455i"
 		}
 	],
 	"backtrace" : 1,
@@ -27,43 +27,49 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 97,
+				"line" : 109,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 99,
+				"line" : 111,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 75,
+				"line" : 79,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 88,
+				"line" : 92,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 19,
+				"line" : 21,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 43,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 85,
+				"line" : 53,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 89,
 				"parent" : 0
 			}
 		]
@@ -75,6 +81,9 @@
 			[
 				{
 					"fragment" : " -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG   -w"
+				},
+				{
+					"fragment" : "-std=gnu++14"
 				}
 			],
 			"defines" : 
@@ -104,6 +113,10 @@
 				},
 				{
 					"backtrace" : 7,
+					"path" : "/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac"
+				},
+				{
+					"backtrace" : 8,
 					"path" : "/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2"
 				},
 				{
@@ -113,6 +126,14 @@
 				}
 			],
 			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "14"
+			},
 			"sourceIndexes" : 
 			[
 				0
@@ -126,7 +147,7 @@
 			"id" : "ORB_SLAM2::@6890427a1f51a3e7e1df"
 		}
 	],
-	"id" : "rgbd_tum::@6890427a1f51a3e7e1df",
+	"id" : "rgbd_realsense_D455i::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -454,8 +475,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "rgbd_tum",
-	"nameOnDisk" : "rgbd_tum",
+	"name" : "rgbd_realsense_D455i",
+	"nameOnDisk" : "rgbd_realsense_D455i",
 	"paths" : 
 	{
 		"build" : ".",
@@ -476,7 +497,7 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Examples/RGB-D/rgbd_tum.cc",
+			"path" : "Examples/RGB-D/readSensor.cc",
 			"sourceGroupIndex" : 0
 		}
 	],

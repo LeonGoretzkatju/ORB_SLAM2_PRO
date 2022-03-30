@@ -2,7 +2,7 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Examples/RGB-D/rgbd_realsense_D435i"
+			"path" : "/home/deeprealtech/SLAM/ORB_SLAM2_PRO/lib/libORB_SLAM2.so"
 		}
 	],
 	"backtrace" : 1,
@@ -10,7 +10,7 @@
 	{
 		"commands" : 
 		[
-			"add_executable",
+			"add_library",
 			"target_link_libraries",
 			"add_definitions",
 			"include_directories"
@@ -27,43 +27,43 @@
 			{
 				"command" : 0,
 				"file" : 0,
-				"line" : 102,
+				"line" : 57,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 104,
+				"line" : 79,
 				"parent" : 0
 			},
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 75,
-				"parent" : 0
-			},
-			{
-				"command" : 1,
-				"file" : 0,
-				"line" : 88,
+				"line" : 92,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 19,
+				"line" : 21,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 43,
+				"line" : 45,
 				"parent" : 0
 			},
 			{
 				"command" : 3,
 				"file" : 0,
-				"line" : 85,
+				"line" : 53,
+				"parent" : 0
+			},
+			{
+				"command" : 3,
+				"file" : 0,
+				"line" : 89,
 				"parent" : 0
 			}
 		]
@@ -74,33 +74,43 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : " -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG   -w"
+					"fragment" : " -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w"
+				},
+				{
+					"fragment" : "-std=gnu++14"
 				}
 			],
 			"defines" : 
 			[
 				{
-					"backtrace" : 5,
+					"backtrace" : 4,
 					"define" : "COMPILEDWITHC11"
+				},
+				{
+					"define" : "ORB_SLAM2_EXPORTS"
 				}
 			],
 			"includes" : 
 			[
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/home/deeprealtech/SLAM/ORB_SLAM2_PRO"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/usr/local/include/eigen3"
 				},
 				{
-					"backtrace" : 6,
+					"backtrace" : 5,
 					"path" : "/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours"
+				},
+				{
+					"backtrace" : 6,
+					"path" : "/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac"
 				},
 				{
 					"backtrace" : 7,
@@ -113,274 +123,307 @@
 				}
 			],
 			"language" : "CXX",
+			"languageStandard" : 
+			{
+				"backtraces" : 
+				[
+					1
+				],
+				"standard" : "14"
+			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				20,
+				22,
+				24
 			]
 		}
 	],
-	"dependencies" : 
-	[
-		{
-			"backtrace" : 2,
-			"id" : "ORB_SLAM2::@6890427a1f51a3e7e1df"
-		}
-	],
-	"id" : "rgbd_realsense_D435i::@6890427a1f51a3e7e1df",
+	"id" : "ORB_SLAM2::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
 		[
 			{
-				"fragment" : "-Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG",
+				"fragment" : "",
 				"role" : "flags"
 			},
 			{
-				"fragment" : "-rdynamic",
-				"role" : "flags"
-			},
-			{
-				"fragment" : "-Wl,-rpath,/home/deeprealtech/SLAM/ORB_SLAM2_PRO/lib:/usr/local/lib:/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/DBoW2/lib:/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/g2o/lib:/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours/build/open3d",
+				"fragment" : "-Wl,-rpath,/usr/local/lib:/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/DBoW2/lib:/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/g2o/lib:/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours/build/open3d",
 				"role" : "libraries"
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "../lib/libORB_SLAM2.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_img_hash.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
-				"backtrace" : 3,
-				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
+				"backtrace" : 2,
 				"fragment" : "/usr/local/lib/libpangolin.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "../Thirdparty/DBoW2/lib/libDBoW2.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "../Thirdparty/g2o/lib/libg2o.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "../Thirdparty/open3d_ours/build/open3d/libopen3d_part_lib.so",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 3,
+				"fragment" : "/usr/lib/x86_64-linux-gnu/librealsense2.so.2.50.0",
+				"role" : "libraries"
+			},
+			{
+				"backtrace" : 2,
+				"fragment" : "/usr/local/lib/libopencv_world.so.3.4.1",
 				"role" : "libraries"
 			},
 			{
@@ -430,32 +473,12 @@
 			{
 				"fragment" : "-lz",
 				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "../Thirdparty/DBoW2/lib/libDBoW2.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "../Thirdparty/g2o/lib/libg2o.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 3,
-				"fragment" : "../Thirdparty/open3d_ours/build/open3d/libopen3d_part_lib.so",
-				"role" : "libraries"
-			},
-			{
-				"backtrace" : 4,
-				"fragment" : "/usr/lib/x86_64-linux-gnu/librealsense2.so.2.50.0",
-				"role" : "libraries"
 			}
 		],
 		"language" : "CXX"
 	},
-	"name" : "rgbd_realsense_D435i",
-	"nameOnDisk" : "rgbd_realsense_D435i",
+	"name" : "ORB_SLAM2",
+	"nameOnDisk" : "libORB_SLAM2.so",
 	"paths" : 
 	{
 		"build" : ".",
@@ -467,7 +490,37 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10,
+				11,
+				12,
+				13,
+				14,
+				15,
+				16,
+				17,
+				18,
+				20,
+				22,
+				24
+			]
+		},
+		{
+			"name" : "Header Files",
+			"sourceIndexes" : 
+			[
+				19,
+				21,
+				23
 			]
 		}
 	],
@@ -476,9 +529,150 @@
 		{
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
-			"path" : "Examples/RGB-D/rgbd_realsense_D435i.cc",
+			"path" : "src/System.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Tracking.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/LocalMapping.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/LoopClosing.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/ORBextractor.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/ORBmatcher.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/FrameDrawer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Converter.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/MapPoint.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/KeyFrame.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Map.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/MapDrawer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Optimizer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/PnPsolver.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Frame.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/KeyFrameDatabase.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Sim3Solver.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Initializer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/Viewer.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/DenseRecons.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/DenseRecons.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/PlaneExtractor.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/PlaneExtractor.cc",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"path" : "include/3DLineExtractor.h",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/3DLineExtractor.cc",
 			"sourceGroupIndex" : 0
 		}
 	],
-	"type" : "EXECUTABLE"
+	"type" : "SHARED_LIBRARY"
 }

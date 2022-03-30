@@ -67,25 +67,25 @@ int main(int argc, char** argv) try
         if (rs2::motion_frame accel_frame = frames.first_or_default(RS2_STREAM_ACCEL))
         {
             rs2_vector accel_sample = accel_frame.get_motion_data();
-            std::cout << "Accel:" << accel_sample.x << ", " << accel_sample.y << ", " << accel_sample.z << std::endl;
+//            std::cout << "Accel:" << accel_sample.x << ", " << accel_sample.y << ", " << accel_sample.z << std::endl;
         }
         if (rs2::motion_frame gyro_frame = frames.first_or_default(RS2_STREAM_GYRO))
         {
             rs2_vector gyro_sample = gyro_frame.get_motion_data();
-            std::cout << "Gyro:" << gyro_sample.x << ", " << gyro_sample.y << ", " << gyro_sample.z << std::endl;
+//            std::cout << "Gyro:" << gyro_sample.x << ", " << gyro_sample.y << ", " << gyro_sample.z << std::endl;
         }
 
         //Get each frame
         rs2::frame color_frame = frames.get_color_frame();
         rs2::frame depth_frame = frames.get_depth_frame();
-        rs2::video_frame ir_frame_left = frames.get_infrared_frame(1);
-        rs2::video_frame ir_frame_right = frames.get_infrared_frame(2);
+//        rs2::video_frame ir_frame_left = frames.get_infrared_frame(1);
+//        rs2::video_frame ir_frame_right = frames.get_infrared_frame(2);
 
 
         // Creating OpenCV Matrix from a color image
         Mat color(Size(width, height), CV_8UC3, (void*)color_frame.get_data(), Mat::AUTO_STEP);
-        Mat pic_right(Size(width,height), CV_8UC1, (void*)ir_frame_right.get_data());
-        Mat pic_left(Size(width,height), CV_8UC1, (void*)ir_frame_left.get_data());
+//        Mat pic_right(Size(width,height), CV_8UC1, (void*)ir_frame_right.get_data());
+//        Mat pic_left(Size(width,height), CV_8UC1, (void*)ir_frame_left.get_data());
         Mat pic_depth(Size(width,height), CV_16U, (void*)depth_frame.get_data(), Mat::AUTO_STEP);
 
         SLAM.TrackRGBD(color,pic_depth*15,id);

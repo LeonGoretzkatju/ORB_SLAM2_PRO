@@ -124,7 +124,7 @@ void MapDrawer::DrawMesh()
             cx = vpKFs[i]->cx; cy = vpKFs[i]->cy;
 
             auto rgbd = open3d::geometry::RGBDImage::CreateFromColorAndDepth(
-                    color, depth, 5000.0, 7.0, false);
+                    color, depth, 10000.0, 7.0, false);
             open3d::camera::PinholeCameraIntrinsic intrinsic_
                     (depth.width_, depth.height_, fx, fy, cx, cy );
             cv::Mat extrinsic = vpKFs[i]->GetPose();// Inverse();

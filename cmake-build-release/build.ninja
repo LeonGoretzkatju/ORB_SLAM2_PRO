@@ -63,160 +63,176 @@ build cmake_object_order_depends_target_ORB_SLAM2: phony || CMakeFiles/ORB_SLAM2
 build CMakeFiles/ORB_SLAM2.dir/src/System.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/System.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/System.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/Tracking.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/Tracking.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/Tracking.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/LocalMapping.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/LocalMapping.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/LocalMapping.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/LoopClosing.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/LoopClosing.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/LoopClosing.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/ORBextractor.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/ORBmatcher.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/FrameDrawer.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/FrameDrawer.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/FrameDrawer.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/Converter.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/Converter.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/Converter.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/MapPoint.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/MapPoint.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/MapPoint.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/KeyFrame.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/KeyFrame.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/KeyFrame.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/Map.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/Map.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/Map.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/MapDrawer.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/MapDrawer.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/MapDrawer.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/Optimizer.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/Optimizer.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/Optimizer.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/PnPsolver.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/PnPsolver.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/PnPsolver.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/Frame.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/Frame.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/Frame.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/KeyFrameDatabase.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/KeyFrameDatabase.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/KeyFrameDatabase.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/Sim3Solver.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/Sim3Solver.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/Sim3Solver.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/Initializer.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/Initializer.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/Initializer.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/Viewer.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/Viewer.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/Viewer.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
 build CMakeFiles/ORB_SLAM2.dir/src/DenseRecons.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/DenseRecons.cc || cmake_object_order_depends_target_ORB_SLAM2
   DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
   DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/DenseRecons.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
+  OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
+
+build CMakeFiles/ORB_SLAM2.dir/src/PlaneExtractor.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/PlaneExtractor.cc || cmake_object_order_depends_target_ORB_SLAM2
+  DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
+  DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/PlaneExtractor.cc.o.d
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
+  OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
+
+build CMakeFiles/ORB_SLAM2.dir/src/3DLineExtractor.cc.o: CXX_COMPILER__ORB_SLAM2_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/src/3DLineExtractor.cc || cmake_object_order_depends_target_ORB_SLAM2
+  DEFINES = -DCOMPILEDWITHC11 -DORB_SLAM2_EXPORTS
+  DEP_FILE = CMakeFiles/ORB_SLAM2.dir/src/3DLineExtractor.cc.o.d
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG -fPIC   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
   OBJECT_FILE_DIR = CMakeFiles/ORB_SLAM2.dir/src
 
@@ -228,7 +244,7 @@ build CMakeFiles/ORB_SLAM2.dir/src/DenseRecons.cc.o: CXX_COMPILER__ORB_SLAM2_Rel
 #############################################
 # Link the shared library ../lib/libORB_SLAM2.so
 
-build ../lib/libORB_SLAM2.so: CXX_SHARED_LIBRARY_LINKER__ORB_SLAM2_Release CMakeFiles/ORB_SLAM2.dir/src/System.cc.o CMakeFiles/ORB_SLAM2.dir/src/Tracking.cc.o CMakeFiles/ORB_SLAM2.dir/src/LocalMapping.cc.o CMakeFiles/ORB_SLAM2.dir/src/LoopClosing.cc.o CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cc.o CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cc.o CMakeFiles/ORB_SLAM2.dir/src/FrameDrawer.cc.o CMakeFiles/ORB_SLAM2.dir/src/Converter.cc.o CMakeFiles/ORB_SLAM2.dir/src/MapPoint.cc.o CMakeFiles/ORB_SLAM2.dir/src/KeyFrame.cc.o CMakeFiles/ORB_SLAM2.dir/src/Map.cc.o CMakeFiles/ORB_SLAM2.dir/src/MapDrawer.cc.o CMakeFiles/ORB_SLAM2.dir/src/Optimizer.cc.o CMakeFiles/ORB_SLAM2.dir/src/PnPsolver.cc.o CMakeFiles/ORB_SLAM2.dir/src/Frame.cc.o CMakeFiles/ORB_SLAM2.dir/src/KeyFrameDatabase.cc.o CMakeFiles/ORB_SLAM2.dir/src/Sim3Solver.cc.o CMakeFiles/ORB_SLAM2.dir/src/Initializer.cc.o CMakeFiles/ORB_SLAM2.dir/src/Viewer.cc.o CMakeFiles/ORB_SLAM2.dir/src/DenseRecons.cc.o | /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_img_hash.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libpangolin.so ../Thirdparty/DBoW2/lib/libDBoW2.so ../Thirdparty/g2o/lib/libg2o.so ../Thirdparty/open3d_ours/build/open3d/libopen3d_part_lib.so /usr/lib/x86_64-linux-gnu/librealsense2.so.2.50.0 /usr/local/lib/libopencv_world.so.3.4.1 /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libGLEW.so /usr/lib/x86_64-linux-gnu/libSM.so /usr/lib/x86_64-linux-gnu/libICE.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libpython2.7.so /usr/lib/x86_64-linux-gnu/libpng.so /usr/lib/x86_64-linux-gnu/libz.so
+build ../lib/libORB_SLAM2.so: CXX_SHARED_LIBRARY_LINKER__ORB_SLAM2_Release CMakeFiles/ORB_SLAM2.dir/src/System.cc.o CMakeFiles/ORB_SLAM2.dir/src/Tracking.cc.o CMakeFiles/ORB_SLAM2.dir/src/LocalMapping.cc.o CMakeFiles/ORB_SLAM2.dir/src/LoopClosing.cc.o CMakeFiles/ORB_SLAM2.dir/src/ORBextractor.cc.o CMakeFiles/ORB_SLAM2.dir/src/ORBmatcher.cc.o CMakeFiles/ORB_SLAM2.dir/src/FrameDrawer.cc.o CMakeFiles/ORB_SLAM2.dir/src/Converter.cc.o CMakeFiles/ORB_SLAM2.dir/src/MapPoint.cc.o CMakeFiles/ORB_SLAM2.dir/src/KeyFrame.cc.o CMakeFiles/ORB_SLAM2.dir/src/Map.cc.o CMakeFiles/ORB_SLAM2.dir/src/MapDrawer.cc.o CMakeFiles/ORB_SLAM2.dir/src/Optimizer.cc.o CMakeFiles/ORB_SLAM2.dir/src/PnPsolver.cc.o CMakeFiles/ORB_SLAM2.dir/src/Frame.cc.o CMakeFiles/ORB_SLAM2.dir/src/KeyFrameDatabase.cc.o CMakeFiles/ORB_SLAM2.dir/src/Sim3Solver.cc.o CMakeFiles/ORB_SLAM2.dir/src/Initializer.cc.o CMakeFiles/ORB_SLAM2.dir/src/Viewer.cc.o CMakeFiles/ORB_SLAM2.dir/src/DenseRecons.cc.o CMakeFiles/ORB_SLAM2.dir/src/PlaneExtractor.cc.o CMakeFiles/ORB_SLAM2.dir/src/3DLineExtractor.cc.o | /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_img_hash.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libopencv_world.so.3.4.1 /usr/local/lib/libpangolin.so ../Thirdparty/DBoW2/lib/libDBoW2.so ../Thirdparty/g2o/lib/libg2o.so ../Thirdparty/open3d_ours/build/open3d/libopen3d_part_lib.so /usr/lib/x86_64-linux-gnu/librealsense2.so.2.50.0 /usr/local/lib/libopencv_world.so.3.4.1 /usr/lib/x86_64-linux-gnu/libGL.so /usr/lib/x86_64-linux-gnu/libGLU.so /usr/lib/x86_64-linux-gnu/libGLEW.so /usr/lib/x86_64-linux-gnu/libSM.so /usr/lib/x86_64-linux-gnu/libICE.so /usr/lib/x86_64-linux-gnu/libX11.so /usr/lib/x86_64-linux-gnu/libXext.so /usr/lib/x86_64-linux-gnu/libpython2.7.so /usr/lib/x86_64-linux-gnu/libpng.so /usr/lib/x86_64-linux-gnu/libz.so
   LANGUAGE_COMPILE_FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG
   LINK_LIBRARIES = -Wl,-rpath,/usr/local/lib:/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/DBoW2/lib:/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/g2o/lib:/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours/build/open3d  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_img_hash.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libopencv_world.so.3.4.1  /usr/local/lib/libpangolin.so  ../Thirdparty/DBoW2/lib/libDBoW2.so  ../Thirdparty/g2o/lib/libg2o.so  ../Thirdparty/open3d_ours/build/open3d/libopen3d_part_lib.so  /usr/lib/x86_64-linux-gnu/librealsense2.so.2.50.0  /usr/local/lib/libopencv_world.so.3.4.1  -lrt  -lpthread  -lGL  -lGLU  -lGLEW  -lSM  -lICE  -lX11  -lXext  -lpython2.7  -lpng  -lz
   OBJECT_DIR = CMakeFiles/ORB_SLAM2.dir
@@ -251,8 +267,8 @@ build cmake_object_order_depends_target_rgbd_tum: phony || cmake_object_order_de
 build CMakeFiles/rgbd_tum.dir/Examples/RGB-D/rgbd_tum.cc.o: CXX_COMPILER__rgbd_tum_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/Examples/RGB-D/rgbd_tum.cc || cmake_object_order_depends_target_rgbd_tum
   DEFINES = -DCOMPILEDWITHC11
   DEP_FILE = CMakeFiles/rgbd_tum.dir/Examples/RGB-D/rgbd_tum.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/rgbd_tum.dir
   OBJECT_FILE_DIR = CMakeFiles/rgbd_tum.dir/Examples/RGB-D
 
@@ -286,8 +302,8 @@ build cmake_object_order_depends_target_rgbd_realsense_D435i: phony || cmake_obj
 build CMakeFiles/rgbd_realsense_D435i.dir/Examples/RGB-D/rgbd_realsense_D435i.cc.o: CXX_COMPILER__rgbd_realsense_D435i_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/Examples/RGB-D/rgbd_realsense_D435i.cc || cmake_object_order_depends_target_rgbd_realsense_D435i
   DEFINES = -DCOMPILEDWITHC11
   DEP_FILE = CMakeFiles/rgbd_realsense_D435i.dir/Examples/RGB-D/rgbd_realsense_D435i.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/rgbd_realsense_D435i.dir
   OBJECT_FILE_DIR = CMakeFiles/rgbd_realsense_D435i.dir/Examples/RGB-D
 
@@ -333,8 +349,8 @@ build cmake_object_order_depends_target_rgbd_realsense_D455i: phony || cmake_obj
 build CMakeFiles/rgbd_realsense_D455i.dir/Examples/RGB-D/readSensor.cc.o: CXX_COMPILER__rgbd_realsense_D455i_Release /home/deeprealtech/SLAM/ORB_SLAM2_PRO/Examples/RGB-D/readSensor.cc || cmake_object_order_depends_target_rgbd_realsense_D455i
   DEFINES = -DCOMPILEDWITHC11
   DEP_FILE = CMakeFiles/rgbd_realsense_D455i.dir/Examples/RGB-D/readSensor.cc.o.d
-  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG   -w
-  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
+  FLAGS = -Wall   -O3 -march=native -std=c++11 -O3 -DNDEBUG   -w -std=gnu++14
+  INCLUDES = -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include -I/usr/local/include/eigen3 -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/Thirdparty/open3d_ours -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/include/peac -I/home/deeprealtech/SLAM/ORB_SLAM2_PRO/ORB_SLAM2 -isystem /usr/local/include/opencv
   OBJECT_DIR = CMakeFiles/rgbd_realsense_D455i.dir
   OBJECT_FILE_DIR = CMakeFiles/rgbd_realsense_D455i.dir/Examples/RGB-D
 

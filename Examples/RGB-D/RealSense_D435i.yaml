@@ -32,7 +32,7 @@ Camera.RGB: 1
 
 # Close/Far threshold. Baseline times.
 Stereo.ThDepth: 40.0
-Stereo.b: 0.0745
+#Stereo.b: 0.0745
 
 # Depth map values factor
 RGBD.DepthMapFactor: 1000.0

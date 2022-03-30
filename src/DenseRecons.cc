@@ -12,8 +12,8 @@ namespace ORB_SLAM2
 {
 
     DenseRecons::DenseRecons() {
-        globalMap = std::shared_ptr<geometry::PointCloud>();
-        viewerThread = make_shared<thread>( bind(&DenseRecons::viewer, this ) );
+//        globalMap = std::shared_ptr<geometry::PointCloud>();
+//        viewerThread = make_shared<thread>( bind(&DenseRecons::viewer, this ) );
     }
 
     void DenseRecons::shutdown()
@@ -43,7 +43,7 @@ namespace ORB_SLAM2
     int num_i = 0;
 
     void DenseRecons::viewer() {
-        pangolin::CreateWindowAndBind("Point Cloud Viewer", 720, 540);
+        pangolin::CreateWindowAndBind("Point Cloud Viewer", 1024, 768);
         glEnable(GL_DEPTH_TEST);
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);

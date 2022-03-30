@@ -574,6 +574,7 @@ std::tuple<bool, Eigen::Matrix4d, Eigen::Matrix6d> ComputeRGBDOdometry(
     if (!CheckRGBDImagePair(source, target)) {
         // utility::LogWarning(
         //         "[RGBDOdometry] Two RGBD pairs should be same in size.");
+        std::cout << "[RGBDOdometry] Two RGBD pairs should be same in size." << std::endl;
         return std::make_tuple(false, Eigen::Matrix4d::Identity(),
                                Eigen::Matrix6d::Zero());
     }

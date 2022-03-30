@@ -47,7 +47,8 @@ Frame::Frame(const Frame &frame)
      mpReferenceKF(frame.mpReferenceKF), mnScaleLevels(frame.mnScaleLevels),
      mfScaleFactor(frame.mfScaleFactor), mfLogScaleFactor(frame.mfLogScaleFactor),
      mvScaleFactors(frame.mvScaleFactors), mvInvScaleFactors(frame.mvInvScaleFactors),
-     mvLevelSigma2(frame.mvLevelSigma2), mvInvLevelSigma2(frame.mvInvLevelSigma2)
+     mvLevelSigma2(frame.mvLevelSigma2), mvInvLevelSigma2(frame.mvInvLevelSigma2), mRGB(frame.mRGB), mDepth(frame.mDepth),
+     seg_depth(frame.seg_depth)
 {
     for(int i=0;i<FRAME_GRID_COLS;i++)
         for(int j=0; j<FRAME_GRID_ROWS; j++)
@@ -140,6 +141,9 @@ Frame::Frame(const cv::Mat &imRGB, const cv::Mat &imGray, const cv::Mat &imDepth
 
     // ORB extraction
     ExtractORB(0,imGray);
+
+    thread threadPlanes(&ORB_SLAM2::Frame::ExtractPlanes, this, imRGB, imDepth, K, mDepthMapFactor);
+    threadPlanes.join();
 
     N = mvKeys.size();
 
@@ -256,6 +260,15 @@ void Frame::ExtractORB(int flag, const cv::Mat &im)
         (*mpORBextractorLeft)(im,cv::Mat(),mvKeys,mDescriptors);
     else
         (*mpORBextractorRight)(im,cv::Mat(),mvKeysRight,mDescriptorsRight);
+}
+
+void Frame::ExtractPlanes(const cv::Mat &imRGB, const cv::Mat &imDepth, const cv::Mat &K, const float &depthMapFactor)
+{
+    planeDetector.readColorImage(imRGB);
+    planeDetector.readDepthImage(imDepth, K, depthMapFactor);
+//    cout << "depthmap factor is " << depthMapFactor << endl;
+    seg_depth = planeDetector.runPlaneDetection(imDepth,imRGB);
+    seg_img = planeDetector.seg_img_;
 }
 
 void Frame::SetPose(cv::Mat Tcw)
