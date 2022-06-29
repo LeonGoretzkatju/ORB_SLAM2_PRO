@@ -1,3 +1,12 @@
+# ORB-SLAM2-PRO
+**Authors:** [Xiangchen Liu](https://twitter.com/AlexXiangchen)
+# Function
+Add the Real-time direct ICP Method for further improve the accuracy of the pose estimation, which minimizes the geometry and photometric error simultaneously.
+# Contributions
+1. Only use the non-planar region for direct ICP method, the planar area is used for Indoor-SLAM using Manhattan World assumption
+2. Making full use of multi-thread to guarantee the real-time performance of ICP algorithm.
+3. Coarse-to-fine multi-level pyramid scheme to speed up the whole process.
+4. Taking the reprojection depth error and photometric error into consideration simultaneously.
 # ORB-SLAM2
 **Authors:** [Raul Mur-Artal](http://webdiis.unizar.es/~raulmur/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/), [J. M. M. Montiel](http://webdiis.unizar.es/~josemari/) and [Dorian Galvez-Lopez](http://doriangalvez.com/) ([DBoW2](https://github.com/dorian3d/DBoW2))
 
